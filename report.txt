@@ -1,0 +1,119 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1326\cocoasubrtf110
+{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid101\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs32 \cf0 report for Imitris\
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+\
+\kerning1\expnd0\expndtw0 1	\expnd0\expndtw0\kerning0
+A high-level description of each of your public member functions in each of your classes, and why you chose to define each member function in its host class; also explain why (or why not) you decided to make each function virtual or pure virtual. For example, "I chose to define a pure virtual version of the sing() function in my base Piece class because all Pieces sing, but each kind of piece sings in its own way."\
+\
+Piece:\
+Piece() initializes a piece\
+\
+erase(\kerning1\expnd0\expndtw0 \CocoaLigature0 Screen& screen\expnd0\expndtw0\kerning0
+\CocoaLigature1 ) erases the screen\
+\
+erase(\kerning1\expnd0\expndtw0 \CocoaLigature0 Screen& screen, bool all) erases piece.\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 draw(Screen& screen)displays the screen.\
+\
+draw(Screen& screen, bool all) draws a piece.\
+\
+clockwise() determines the orientation of rt. piece\
+\
+\expnd0\expndtw0\kerning0
+\CocoaLigature1 moveDown() moves the piece down for 1 row.\
+\
+moveLeft() / moveRight() moves the piece left/right for 1 column.\
+\pard\pardeftab720
+\cf0 \
+Tank:\
+Tank() that clears the tank\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 \kerning1\expnd0\expndtw0 \CocoaLigature0 display(Screen& screen, int x, int y);\expnd0\expndtw0\kerning0
+\CocoaLigature1  draws \'91@\'91 at the boundary of the tank\
+\pard\pardeftab720
+\cf0 \
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 \kerning1\expnd0\expndtw0 \CocoaLigature0 FreeBlock(int fx, int fy)\expnd0\expndtw0\kerning0
+\CocoaLigature1 checks if a block is free or filled. returns true if it\'92s free.\
+\pard\pardeftab720
+\cf0 \
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 \kerning1\expnd0\expndtw0 \CocoaLigature0 PossibleMovement(int px, int py, Piece* pPiece, int pRotation) \expnd0\expndtw0\kerning0
+\CocoaLigature1 checked if a movement would cause collision.\
+\pard\pardeftab720
+\cf0 \
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 \kerning1\expnd0\expndtw0 \CocoaLigature0 StorePiece(int sx, int sy, Piece* pPiece);\expnd0\expndtw0\kerning0
+\CocoaLigature1  changes the \'91#\'92 that represents the moving piece to \'91@\'91 which means it\'92s settled in the tank.\
+\pard\pardeftab720
+\cf0 \
+vaporize() checks if a line is full and vaporize it if it is. \
+\
+countRowsLeft() updates the rows that are left in the tank\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 \kerning1\expnd0\expndtw0 \CocoaLigature0 vapor(Piece* pPiece);\expnd0\expndtw0\kerning0
+\CocoaLigature1 removes all blocks that are up to two rows directly above or below the vapor bomb. \
+\pard\pardeftab720
+\cf0 \
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 \kerning1\expnd0\expndtw0 \CocoaLigature0 foam(Piece* pPiece);\expnd0\expndtw0\kerning0
+\CocoaLigature1  \kerning1\expnd0\expndtw0 \CocoaLigature0 fills all empty slots that are in the 5x5 block bounding box (X-2,Y-2) to (X+2,Y+2)\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+Game:\
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 \kerning1\expnd0\expndtw0 \CocoaLigature0 Game(int width, int height); \expnd0\expndtw0\kerning0
+\CocoaLigature1 initialization function \
+\pard\pardeftab720
+\cf0 \
+play() function which handles the start and end of the game, including screen display, game data and prompts.\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 \kerning1\expnd0\expndtw0 \CocoaLigature0 displayPrompt(std::string s);\expnd0\expndtw0\kerning0
+\CocoaLigature1  function shows the prompts that overwrite previous one on the side of the screen. \
+\pard\pardeftab720
+\cf0 \
+displayNextPiece() shows the next Piece that is going down next on the side of the screen. \
+\
+displayStatus() prints score, rows left and level.\
+\
+playOneLevel() assigns new pieces, changes the tank display with each new Piece and each command the users type after checking if the actions are legal.\
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 2.	\expnd0\expndtw0\kerning0
+A list of all functionality that you failed to finish as well as known bugs in your classes,\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0\cf0          \expnd0\expndtw0\kerning0
+I couldn't get the recursive FoamBomb algorithm to work, so for now it just checks its four immediate neighbors to see if they can be foamed.\expnd0\expndtw0\kerning0
+\
+\pard\tx720\pardeftab720
+\cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls2\ilvl0\cf0 \kerning1\expnd0\expndtw0 3.    \expnd0\expndtw0\kerning0
+A list of other design decisions and assumptions you made \
+\pard\tx720\pardeftab720
+\cf0 \
+        I was not sure about how to deal with delay function so as of now I just let it be there. \
+}
